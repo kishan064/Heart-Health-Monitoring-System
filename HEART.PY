@@ -149,7 +149,8 @@ for feature in X.columns:
             invalid_input = True
 
     elif feature == "trestbps":
-        user_inputs[feature] = round(st.number_input(f'{label}', value=120.0, step=1.0))
+        user_inputs[feature] = round(st.number_input(f'{label}', min_value=1.0, value=120.0, step=1.0))
+            
 
     else:
         user_inputs[feature] = st.number_input(f'{label}', value=0, step=1, format="%d")
